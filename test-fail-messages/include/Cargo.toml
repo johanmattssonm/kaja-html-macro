@@ -1,0 +1,13 @@
+[workspace]
+
+[package]
+name = "include"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+htmlmacro = { path = "../../" }
+
+[[bin]]
+name = "include"
+path = "main.rs"
