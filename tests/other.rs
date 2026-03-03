@@ -20,7 +20,7 @@ fn test_var() {
 }
 
 #[test]
-fn test_html_js_inlcuded() {
+fn test_html_js_included() {
     let test_var = "Headline";
 
     let html = html! {{
