@@ -1,7 +1,7 @@
 # html! — Declarative HTML Macro for Rust
 
 `html!` is a declarative macro for generating HTML directly inside your Rust
-project. It expands at compile time into `String`.
+project. It expands at compile time html to code that creates a `String`.
 
 ## Generating HTML strings with this Rust macro
 
