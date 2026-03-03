@@ -62,10 +62,10 @@ fn child_component_simple_loop() -> String {
 
 ## Variables and Functions in the Markup
 
-- `$variable_name` -- insert content of the variable and escape tags.
-- `$(get_value())` -- insert string from the get_value function and escape tags.
-- `$(x + 2)` -- compute x + 2 and add the content to the html string, escaped if needed.
-- `<include some_other_component() />` insert trusted HTML content from the function some_other_component, html tags are allowed.
+- `$variable_name` – insert content of the variable and escape tags.
+- `$(get_value())` – insert string from the get_value function and escape tags.
+- `$(x + 2)` – compute x + 2 and add the content to the html string, escaped if needed.
+- `<include some_other_component() />` – insert trusted HTML content from the function some_other_component, html tags are allowed.
 
 ## Concept
 
