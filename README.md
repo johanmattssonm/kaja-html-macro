@@ -71,11 +71,12 @@ Use `<include />` to insert HTML content from another component.
 use htmlmacro::html;
 
 fn parent() -> String {
-    html! {{
+    let content = html! {{
         <div>
             <include child_component_simple_loop() />
         </div>
     }}
+    content
 }
 
 fn child_component_simple_loop() -> String {
@@ -102,14 +103,16 @@ fn child_component_simple_loop() -> String {
 ## Output
 
 ```html
-<h1>Hello From Nested Component</h1>
-
 <div>
-    <ul>
-        <li>Simple list item 1</li>
-        <li>Simple list item 2</li>
-        <li>Simple list item 3</li>
-    </ul>
+    <h1>Hello From Nested Component</h1>
+    
+    <div>
+        <ul>
+            <li>Simple list item 1</li>
+            <li>Simple list item 2</li>
+            <li>Simple list item 3</li>
+        </ul>
+    </div>
 </div>
 ```
 
