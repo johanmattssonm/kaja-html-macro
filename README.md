@@ -18,7 +18,7 @@ project. It expands at compile time into `String`.
 Inserts a variable and escapes HTML tags.
 
 ```rust
-use htmlmacro::html;
+use kaja_html_macro::html;
 let name = "<b>Johan</b>";
 
 let html = html! {{
@@ -44,7 +44,7 @@ You can evaluate arbitrary Rust expressions:
 Expressions are also automatically escaped.
 
 ```rust
-use htmlmacro::html;
+use kaja_html_macro::html;
 fn get_value() -> String {
     "42".to_string()
 }
@@ -68,14 +68,14 @@ Markup emitted from Rust should be wrapped in `<markup>`.
 Use `<include />` to insert HTML content from another component.
 
 ```rust
-use htmlmacro::html;
+use kaja_html_macro::html;
 
 fn parent() -> String {
     let content = html! {{
         <div>
             <include child_component_simple_loop() />
         </div>
-    }}
+    }};
     content
 }
 

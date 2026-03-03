@@ -1,4 +1,4 @@
-use htmlmacro::html;
+use kaja_html_macro::html;
 
 struct Test {
     test_member: u64,

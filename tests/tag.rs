@@ -1,7 +1,7 @@
 // Copyright (c) 2026 Johan Mattsson
 // License: MIT
 
-use htmlmacro::html;
+use kaja_html_macro::html;
 
 struct Test {
     number: u32,

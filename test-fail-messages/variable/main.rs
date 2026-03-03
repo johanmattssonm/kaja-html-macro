@@ -1,4 +1,4 @@
-use htmlmacro::html;
+use kaja_html_macro::html;
 
 fn main() {
     // missing variable does_not_exist

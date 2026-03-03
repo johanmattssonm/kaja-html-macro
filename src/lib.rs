@@ -22,7 +22,7 @@ use proc_macro_error::proc_macro_error;
 /// # Example for generating a String with HTML tags:
 ///
 /// ```rust
-/// use htmlmacro::html;
+/// use kaja_html_macro::html;
 ///
 /// fn get_header() -> String {
 ///     let content = html! {{ <h1>Header</h1> }};
