@@ -45,6 +45,7 @@ Expressions are also automatically escaped.
 
 ```rust
 use kaja_html_macro::html;
+
 fn get_value() -> String {
     "42".to_string()
 }
@@ -80,7 +81,7 @@ fn parent() -> String {
 }
 
 fn child_component_simple_loop() -> String {
-    html! {{
+    let content = html! {{
         <h1>Hello From Nested Component</h1>
 
         <div>
@@ -96,7 +97,8 @@ fn child_component_simple_loop() -> String {
                 </rust>
             </ul>
         </div>
-    }}
+    }};
+    content
 }
 ```
 
