@@ -104,15 +104,15 @@ fn child_component_simple_loop() -> String {
 
 ```html
 <div>
-    <h1>Hello From Nested Component</h1>
-    
-    <div>
-        <ul>
-            <li>Simple list item 1</li>
-            <li>Simple list item 2</li>
-            <li>Simple list item 3</li>
-        </ul>
-    </div>
+  <h1>Hello From Nested Component</h1>
+
+  <div>
+    <ul>
+      <li>Simple list item 1</li>
+      <li>Simple list item 2</li>
+      <li>Simple list item 3</li>
+    </ul>
+  </div>
 </div>
 ```
 
