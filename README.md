@@ -3,64 +3,6 @@
 `html!` is a declarative macro for generating HTML directly inside your Rust
 project. It expands at compile time into `String`.
 
-## Concept
-
-- Write HTML-like markup directly in Rust
-- Embed Rust control flow with `<rust>`, plain Rust code, no DSL
-- Emit markup dynamically using `<markup>`
-- Interpolate variables and expressions
-- Returns a `String`
-
-## Interpolation Rules
-
-### `$variable`
-
-Inserts a variable and escapes HTML tags.
-
-```rust
-use kaja_html_macro::html;
-let name = "<b>Johan</b>";
-
-let html = html! {{
-    <p>Hello $name</p>
-}};
-```
-
-Output:
-
-```html
-<p>Hello &lt;b&gt;Johan&lt;/b&gt;</p>
-```
-
-### `$(expression)`
-
-You can evaluate arbitrary Rust expressions:
-
-- Function calls
-- Arithmetic
-- Method calls
-- Complex expressions
-
-Expressions are also automatically escaped.
-
-```rust
-use kaja_html_macro::html;
-
-fn get_value() -> String {
-    "42".to_string()
-}
-
-let test = 5;
-
-let html = html! {{
-    <div>
-        <p>Value: $(get_value())</p>
-        <p>Next: $(test + 1)</p>
-    </div>
-}};
-
-```
-
 ## Generating HTML strings with this Rust macro
 
 Rust logic can be embedded inside `<rust>` blocks.
@@ -124,6 +66,63 @@ fn child_component_simple_loop() -> String {
 - `$(get_value())` -- insert string from the get_value function and escape tags.
 - `$(x + 2)` -- compute x + 2 and add the content to the html string, escaped if needed.
 - `<include some_other_component() />` insert trusted HTML content from the function some_other_component, html tags are allowed.
+
+## Concept
+
+- Write HTML-like markup directly in Rust
+- Embed Rust control flow with `<rust>`, plain Rust code, no DSL
+- Emit markup dynamically using `<markup>`
+- Interpolate variables and expressions
+- Returns a `String`
+
+## Interpolation Rules
+
+### `$variable`
+
+Inserts a variable and escapes HTML tags.
+
+```rust
+use kaja_html_macro::html;
+let name = "<b>Johan</b>";
+
+let html = html! {{
+    <p>Hello $name</p>
+}};
+```
+
+Output:
+
+```html
+<p>Hello &lt;b&gt;Johan&lt;/b&gt;</p>
+```
+
+### `$(expression)`
+
+You can evaluate arbitrary Rust expressions:
+
+- Function calls
+- Arithmetic
+- Method calls
+- Complex expressions
+
+Expressions are also automatically escaped.
+
+```rust
+use kaja_html_macro::html;
+
+fn get_value() -> String {
+    "42".to_string()
+}
+
+let test = 5;
+
+let html = html! {{
+    <div>
+        <p>Value: $(get_value())</p>
+        <p>Next: $(test + 1)</p>
+    </div>
+}};
+```
 
 ## Author and Contact
 - Written by Johan Mattsson
