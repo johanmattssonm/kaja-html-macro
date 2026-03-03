@@ -1,6 +1,5 @@
 // Copyright (c) 2026 Johan Mattsson
-// Licensed under either of Apache License, Version 2.0 or MIT license at your option.
-// See LICENSE-APACHE or LICENSE-MIT for details.
+// License: MIT
 
 use std::fmt;
 use std::iter::{Iterator, Peekable};
