@@ -70,7 +70,7 @@ fn child_component_simple_loop() -> String {
 ## Concept
 
 - Write HTML-like markup directly in Rust
-- Embed Rust control flow with `<rust>`, plain Rust code, no DSL
+- Embed Rust control flow with `<rust>`, plain Rust code, no domain specific language
 - Emit markup dynamically using `<markup>`
 - Interpolate variables and expressions
 - Returns a `String`
