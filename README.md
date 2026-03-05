@@ -15,9 +15,9 @@ use kaja_html_macro::html;
 
 fn parent() -> String {
     let content = html! {{
-        <div>
+        <section>
             <include child_component_simple_loop() />
-        </div>
+        </section>
     }};
     content
 }
@@ -26,19 +26,17 @@ fn child_component_simple_loop() -> String {
     let content = html! {{
         <h1>Hello From Nested Component</h1>
 
-        <div>
-            <ul>
-                <rust>
-                    for i in 1..=3 {
-                        let element_id = format!("list item {:?}", i);
+        <ul>
+            <rust>
+                for i in 1..=3 {
+                    let element_id = format!("list item {:?}", i);
 
-                        <markup>
-                            <li>Simple $element_id</li>
-                        </markup>
-                    }
-                </rust>
-            </ul>
-        </div>
+                    <markup>
+                        <li>Simple $element_id</li>
+                    </markup>
+                }
+            </rust>
+        </ul>
     }};
     content
 }
@@ -47,17 +45,15 @@ fn child_component_simple_loop() -> String {
 ## Output
 
 ```html
-<div>
-  <h1>Hello From Nested Component</h1>
-
-  <div>
+<section>
+    <h1>Hello From Nested Component</h1>
+    
     <ul>
-      <li>Simple list item 1</li>
-      <li>Simple list item 2</li>
-      <li>Simple list item 3</li>
+        <li>Simple list item 1</li>
+        <li>Simple list item 2</li>
+        <li>Simple list item 3</li>
     </ul>
-  </div>
-</div>
+</section>
 ```
 
 ## Variables and Functions in the Markup

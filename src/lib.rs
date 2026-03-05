@@ -45,10 +45,23 @@ use proc_macro_error::proc_macro_error;
 /// }};
 /// ```
 ///
+/// # Result
+/// ```html
+/// <div>
+///     <h1>Header</h1>
+///     <ul>
+///         <li>List item 1</li>
+///         <li>List item 2</li>
+///         <li>List item 3</li>
+///     </ul>
+/// </div>
+/// ```
+///
 /// ## Variables and Functions in the Markup
 ///
 /// - `$variable_name` – insert content of the variable and escape tags.
 /// - `$(get_value())` – insert string from the get_value function and escape tags.
+/// - `$(self.something)` – insert value something from struct self and escape tags.
 /// - `$(x + 2)` – compute x + 2 and add the content to the html string, escaped if needed.
 /// - `<include some_other_component() />` – insert trusted HTML content from the function some_other_component, html tags are allowed.
 #[proc_macro_error]
