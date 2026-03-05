@@ -5,8 +5,8 @@ project. It expands at compile time html to code that creates a `String`.
 
 ## Generating HTML strings with this Rust macro
 
-Rust logic can be embedded inside `<rust>` blocks.
-Markup emitted from Rust should be wrapped in `<markup>`.
+Rust code can be used inside `<rust>` blocks and markup emitted from Rust is 
+wrapped in `<markup>`.
 
 Use `<include />` to insert HTML content from another component.
 
