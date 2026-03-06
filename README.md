@@ -121,6 +121,26 @@ let html = html! {{
 }};
 ```
 
+# Printing Struct Fields
+
+```rust
+use kaja_html_macro::html;
+
+struct TestInfo {
+    id: u64,
+}
+
+let info = TestInfo {
+    id: 42,
+};
+
+let html = html! {{
+    <div>
+        <p>ID: $(info.id)</p>
+    </div>
+}};
+```
+
 ## Author and Contact
 - Written by Johan Mattsson
 - johan.mattsson.m@gmail.com
