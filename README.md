@@ -121,7 +121,7 @@ let html = html! {{
 }};
 ```
 
-# Printing Struct Fields
+### Printing Struct Fields
 
 ```rust
 use kaja_html_macro::html;
