@@ -228,18 +228,16 @@ impl<'a> HtmlQuotes<'a> {
 
         result.push_str(
             r#"
-            if __html_variable.chars().any(|c| ['<', '>', '/', '&', '\'', '"', '\\', '='].contains(&c)) {
+            if __html_variable.chars().any(|c| ['<', '>', '&', '\'', '"', '='].contains(&c)) {
                 let mut __escaped = String::with_capacity(2 * __html_variable.len());
 
                 for c in __html_variable.as_str().chars() {
                     match c {
                         '<' => __escaped.push_str("&lt;"),
                         '>' => __escaped.push_str("&gt;"),
-                        '/' => __escaped.push_str("&#x2f;"),
                         '&' => __escaped.push_str("&amp;"),
                         '\'' => __escaped.push_str("&apos;"),
                         '"' => __escaped.push_str("&quot;"),
-                        '\\' => __escaped.push_str("&#x5c;"),
                         '=' => __escaped.push_str("&equals;"),
                         _ => __escaped.push(c),
                     }

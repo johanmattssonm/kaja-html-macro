@@ -44,8 +44,8 @@ fn test_escape_tag() {
     assert!(html.contains("</html>"));
 
     assert!(!html.contains("<script>test</script>"));
-    assert!(html.contains("&lt;script&gt;test&lt;&#x2f;script&gt;"));
-    assert!(html.contains("&lt;script&gt;anothertest&lt;&#x2f;script&gt;"));
+    assert!(html.contains("&lt;script&gt;test&lt;/script&gt;"));
+    assert!(html.contains("&lt;script&gt;anothertest&lt;/script&gt;"));
 
     assert!(html.contains("<includedtag>OK</includedtag>"));
 }

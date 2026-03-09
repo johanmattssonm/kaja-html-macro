@@ -197,3 +197,16 @@ fn test_expression() {
     println!("Generated HTML: {:?}", html);
     assert!(html.contains("<div arg=\"test\"></div>"));
 }
+
+fn test_import() -> String {
+    return String::from("TEST");
+}
+
+#[test]
+fn test_include_fn() {
+    let content = html! {{
+        <include test_import() />
+    }};
+
+    assert!(content.contains("TEST"));
+}
