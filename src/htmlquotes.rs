@@ -2,7 +2,6 @@
 // License: MIT
 
 use quote::quote;
-use std::alloc::Layout;
 use std::usize;
 
 use crate::htmlcontentbuilder::{ErrType, HtmlError};
