@@ -2,6 +2,7 @@
 // License: MIT
 
 use quote::quote;
+use std::alloc::Layout;
 use std::usize;
 
 use crate::htmlcontentbuilder::{ErrType, HtmlError};
@@ -57,6 +58,12 @@ impl<'a> HtmlQuotes<'a> {
                 self.add_pass_through(&mut pass_through);
                 let variable_expression_tokens = self.process_variables_expression()?;
                 self.result.push_str(variable_expression_tokens.as_str());
+
+                if self.current_index > 0 {
+                    let last = self.get(self.current_index - 1).unwrap();
+                    pass_through.push_str(last.white_space_after.clone().as_str());
+                }
+
                 // advance past  $ ( identifier ) is done in process_variables_expression
             } else if self.next_is_variable() {
                 self.add_pass_through(&mut pass_through);

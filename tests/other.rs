@@ -210,3 +210,27 @@ fn test_include_fn() {
 
     assert!(content.contains("TEST"));
 }
+
+#[test]
+fn test_space() {
+    struct Response {
+        status: u16,
+        elapsed: u64,
+    }
+
+    let resp = Response {
+        status: 200,
+        elapsed: 100,
+    };
+
+    let content = html! {{
+        <div>Status: $(resp.status) Elapsed: $(resp.elapsed)ms</div>
+    }};
+
+    let expected = "Status: 200 Elapsed: 100ms";
+
+    println!("Got: {}", content);
+    println!("Expected: {}", expected);
+
+    assert!(content.contains(expected));
+}
