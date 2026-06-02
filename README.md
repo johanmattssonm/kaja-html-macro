@@ -141,6 +141,24 @@ let html = html! {{
 }};
 ```
 
+## Macro Content as String
+If you find yourself fighting with the compiler about special characters like en dash or single quotes, 
+try using a raw string literal as macro content.
+
+```rust
+let test = String::from("bird");
+
+let content = html! {{r#"
+    <script>
+        function test() {
+            let result = 'TEST';
+            let inter = "$test";
+            return result;
+        }
+        </script>
+"#}};
+```
+
 ## Author and Contact
 - Written by Johan Mattsson
 - johan.mattsson.m@gmail.com

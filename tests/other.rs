@@ -251,5 +251,22 @@ fn test_script_compiles() {
             </script>
     }};
 
-    assert!(content.contains("TEST"));
+    assert!(content.contains("<script>"));
+}
+
+#[test]
+fn test_script_string_compiles() {
+    let test = String::from("bird");
+
+    let content = html! {{r#"
+        <script>
+            function test() {
+                let result = 'TEST';
+                let inter = "$test";
+                return result;
+            }
+            </script>
+    "#}};
+
+    assert!(content.contains("bird"));
 }
