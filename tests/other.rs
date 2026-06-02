@@ -234,3 +234,22 @@ fn test_space() {
 
     assert!(content.contains(expected));
 }
+
+#[test]
+fn test_script_compiles() {
+    let content = html! {{
+        <script>
+            function test() {
+                let result = "TEST";
+
+                if (result === "TEST") {
+                    console.log(result);
+                }
+
+                return result;
+            }
+            </script>
+    }};
+
+    assert!(content.contains("TEST"));
+}
