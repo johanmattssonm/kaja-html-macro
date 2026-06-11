@@ -1,0 +1,13 @@
+[workspace]
+
+[package]
+name = "includemissing"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+kaja-html-macro = { path = "../../" }
+
+[[bin]]
+name = "includemissing"
+path = "main.rs"
