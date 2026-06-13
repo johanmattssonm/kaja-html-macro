@@ -1,6 +1,9 @@
 // Copyright (c) 2026 Johan Mattsson
 // License: MIT
 
+#[cfg(test)]
+use std::time::Duration;
+
 use kaja_html_macro::html;
 
 #[test]
@@ -269,4 +272,35 @@ fn test_script_string_compiles() {
     "#}};
 
     assert!(content.contains("bird"));
+}
+
+#[test]
+fn test_space_after_var() {
+    pub struct Task {
+        title: String,
+        target_time: Duration,
+    }
+
+    let task = Task {
+        title: String::from("Test Task"),
+        target_time: Duration::from_secs(60),
+    };
+
+    let all_tasks = vec![task];
+
+    let content = html! {{
+        <rust>
+            for task in &all_tasks {
+                let minutes: u64 = task.target_time.as_secs() / 60;
+
+                <markup>
+                    <h2>$(task.title)</h2>
+                    <p>Time to complete: $minutes minutes</p>
+                </markup>
+            }
+        </rust>
+    }};
+
+    println!("Content {}", content);
+    assert!(content.contains("1 minutes"));
 }

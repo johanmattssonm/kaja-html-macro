@@ -69,6 +69,11 @@ impl<'a> HtmlQuotes<'a> {
                 let variable_tokens = self.process_variables()?;
                 self.result.push_str(variable_tokens.as_str());
                 self.current_index += 2; // advance past $ identifier
+
+                if self.current_index > 0 {
+                    let last = self.get(self.current_index - 1).unwrap();
+                    pass_through.push_str(last.white_space_after.clone().as_str());
+                }
             } else {
                 pass_through.push_str(current_value.to_string().as_str());
                 self.current_index += 1;
