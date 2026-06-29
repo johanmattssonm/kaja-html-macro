@@ -304,3 +304,17 @@ fn test_space_after_var() {
     println!("Content {}", content);
     assert!(content.contains("1 minutes"));
 }
+
+#[test]
+fn test_break_quote() {
+    let id = "testid";
+
+    let content = html! {{
+        <p>
+            <button onclick="increment('$id');">Increment</button>
+        </p>
+    }};
+
+    println!("Content {}", content);
+    assert!(content.contains("increment('testid');"));
+}

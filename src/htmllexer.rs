@@ -30,6 +30,7 @@ pub enum TokenType {
     OtherText,
     Dollar,
     Quote,
+    SingleQuote,
     Slash,
     Period,
     None,
@@ -94,6 +95,7 @@ impl<'a> HtmlDynamicLexer<'a> {
                 next if Self::is_other_text(next) => TokenType::OtherText,
                 '$' => TokenType::Dollar,
                 '"' => TokenType::Quote,
+                '\'' => TokenType::SingleQuote,
                 '{' => TokenType::StartBracket,
                 '}' => TokenType::EndBracket,
                 '<' => TokenType::StartTag,
@@ -129,6 +131,7 @@ impl<'a> HtmlDynamicLexer<'a> {
     fn is_other_text(character: char) -> bool {
         match character {
             '"' => false,
+            '\'' => false,
             '{' => false,
             '}' => false,
             '<' => false,
