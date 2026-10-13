@@ -94,6 +94,7 @@ fn test_compiles() {
         <p>Lorem Ipsum ... (test)</p>
         <p>$("White space is important ... here: Lorem  Ipsum  (test)")</p>
 
+        <p>Also      here</p>
         <include child_component_simple_loop() />
         <include child_component_expr() />
 
@@ -125,6 +126,8 @@ fn test_compiles() {
     }};
 
     println!("Generated HTML: {:?}", html);
+
+    assert!(html.contains("<p>Also      here</p>"));
     assert!(html.contains("<h2>Five Included Components</h2>"));
     assert!(html.contains("inline in loop"));
     assert!(html.contains("SubTreeComponent: Fruits 1"));
