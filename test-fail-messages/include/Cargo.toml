@@ -2,12 +2,11 @@
 
 [package]
 name = "include"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 
 [dependencies]
-kaja-html-macro = { path = "../../" }
-
+kaja-html-macro = "1.1.0"
 [[bin]]
 name = "include"
 path = "main.rs"
